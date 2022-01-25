@@ -1,5 +1,19 @@
 package com.proyect.User.response;
 
-public class UserResponse {
+import java.io.Serializable;
+import java.sql.Date;
 
+import lombok.Data;
+
+@Data
+public class UserResponse implements Serializable {
+
+	private static final long serialVersionUIS = 1L;
+	
+	private Long id;
+	private String name;
+	private String lastName;
+	private String mail;
+	private String password;
+	private Date date;
 }
