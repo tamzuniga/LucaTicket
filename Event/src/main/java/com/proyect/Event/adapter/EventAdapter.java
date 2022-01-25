@@ -15,9 +15,10 @@ public class EventAdapter {
 		EventResponse eventResponse = new EventResponse();
 		eventResponse.setCode(event.getCode());
 		eventResponse.setName(event.getName());
+		eventResponse.setPrice(event.getPrice());
 		eventResponse.setShort_description(event.getShort_description());
 		eventResponse.setLong_description(event.getLong_description());
-		eventResponse.setYear(event.getYear());
+		eventResponse.setDate(event.getDate());
 		eventResponse.setTime(event.getTime());
 		eventResponse.setGenre(event.getGenre());
 		eventResponse.setPolicy(event.getPolicy());

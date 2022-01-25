@@ -22,7 +22,7 @@ public class Event {
 	private String price;
 	private String short_description;
 	private String long_description;
-	private String year;
+	private String date;
 	private String time;
 	private String genre;
 	private String policy;
