@@ -2,9 +2,10 @@ package com.proyect.Event.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.proyect.Event.model.Event;
+import com.proyect.Event.adapter.EventAdapter;
 
-public interface EventRepository extends MongoRepository<Event, String>{
+
+public interface EventRepository extends MongoRepository<EventAdapter, String>{
 
 	
 }

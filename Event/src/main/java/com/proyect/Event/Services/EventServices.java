@@ -1,9 +1,12 @@
 package com.proyect.Event.Services;
 
 
-import com.proyect.Event.model.Event;
+import java.util.Optional;
+
+import com.proyect.Event.adapter.EventAdapter;
 
 public interface EventServices {
 
-	public Event save(Event event);
+	public EventAdapter save(EventAdapter eventAdapter);
+	public EventAdapter inserts(EventAdapter eventAdapter);
 }
