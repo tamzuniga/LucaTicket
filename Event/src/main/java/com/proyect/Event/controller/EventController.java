@@ -66,4 +66,13 @@ public class EventController {
 		eventServices.deleteEvent(code);
 
 	}
+
+	//Actualizar juego
+		@PutMapping("/{code}")
+		public void updateGame(@RequestBody Event event, @PathVariable String code) {
+			
+				eventServices.deleteEvent(code);
+				eventServices.save(event);
+					
+		}
 }
