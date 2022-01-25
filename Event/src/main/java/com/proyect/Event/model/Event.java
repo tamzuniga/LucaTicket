@@ -9,19 +9,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document
+
+@Document(collection = "events")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Event {
 	
 
-    private Long code;
+    private String code;
 	private String name;
-	private Double price;
+	private String price;
 	private String short_description;
 	private String long_description;
-	private int year;
+	private String year;
 	private String time;
 	private String genre;
 	private String policy;
