@@ -1,5 +1,5 @@
 package com.proyect.User.response;
 
-public class ProductResponse {
+public class UserResponse {
 
 }
