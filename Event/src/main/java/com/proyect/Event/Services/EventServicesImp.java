@@ -1,7 +1,6 @@
 package com.proyect.Event.Services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +19,16 @@ public class EventServicesImp implements EventServices{
 	EventAdapter eventAdapter;
 	
 	@Override
-	public Event save(Event event) {
+	public EventAdapter save(EventAdapter eventAdapter) {
 		
-		return er.save(event);
+		return er.save(eventAdapter);
+		
+	}
+	
+	//UPDATE
+	@Override
+	public EventAdapter inserts(EventAdapter eventAdapter) {
+		return er.insert(save(eventAdapter));
 	}
 
 	@Override
