@@ -19,22 +19,22 @@ public class EventServicesImp implements EventServices{
 	EventAdapter eventAdapter;
 	
 	@Override
-	public EventAdapter save(EventAdapter eventAdapter) {
-		
-		return er.save(eventAdapter);
+	public Event save(Event event) {
+		return er.save(event);
 		
 	}
 	
-	//UPDATE
-	@Override
-	public EventAdapter inserts(EventAdapter eventAdapter) {
-		return er.insert(save(eventAdapter));
-	}
 
 	@Override
 	public List<EventResponse> findAll() {
 		final List<Event> all = er.findAll();
 		return eventAdapter.of(all);
+	}
+
+	@Override
+	public EventAdapter inserts(EventAdapter eventAdapter) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

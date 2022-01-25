@@ -8,7 +8,7 @@ import com.proyect.Event.response.EventResponse;
 
 public interface EventServices {
 
-  public EventAdapter save(EventAdapter eventAdapter);
+  public Event save(Event event);
 	public EventAdapter inserts(EventAdapter eventAdapter);
 	public List<EventResponse> findAll();
   
