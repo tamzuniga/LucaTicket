@@ -1,9 +1,6 @@
 package com.proyect.Event.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,11 +13,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class Event {
 	
-	
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long code;
 	private String name;
 	private Double price;
