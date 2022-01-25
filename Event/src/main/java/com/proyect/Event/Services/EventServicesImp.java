@@ -1,4 +1,5 @@
 package com.proyect.Event.Services;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import com.proyect.Event.model.Event;
 import com.proyect.Event.repository.EventRepository;
 import com.proyect.Event.response.EventResponse;
 
-@Service
+
 public class EventServicesImp implements EventServices{
 	
 	@Autowired
@@ -30,6 +31,4 @@ public class EventServicesImp implements EventServices{
 		return eventAdapter.of(all);
 	}
 
-	//Listar eventos
-	
 }

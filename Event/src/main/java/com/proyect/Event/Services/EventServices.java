@@ -1,6 +1,5 @@
 package com.proyect.Event.Services;
 
-
 import java.util.List;
 
 import com.proyect.Event.model.Event;
@@ -13,4 +12,5 @@ public interface EventServices {
 	//Listar Eventos
 	
 	public List<EventResponse> findAll();
+  
 }
