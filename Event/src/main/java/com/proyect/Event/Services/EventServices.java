@@ -11,5 +11,6 @@ public interface EventServices {
   public Event save(Event event);
 	public EventAdapter inserts(EventAdapter eventAdapter);
 	public List<EventResponse> findAll();
+	public void deleteEvent(String code);
   
 }

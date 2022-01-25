@@ -16,6 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.proyect.User.adapter.UserAdapter;
 import com.proyect.User.model.User;
 import com.proyect.User.response.UserResponse;
+import com.proyect.User.service.UserService;
 import com.proyect.User.service.UserServiceImpl;
 
 @RestController
@@ -27,7 +28,7 @@ public class UserController {
 	private UserAdapter ua;
 
 	@Autowired
-	private UserServiceImpl us;
+	private UserService us;
 
 	@PostMapping("/newUser/{user}")
 	public ResponseEntity<UserResponse> newUser(@RequestBody User user) {
