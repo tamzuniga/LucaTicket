@@ -1,5 +1,7 @@
 package com.proyect.User.service;
 
-public interface UserService {
+import com.proyect.User.model.User;
 
+public interface UserService {
+	public User newUser(User user);
 }
