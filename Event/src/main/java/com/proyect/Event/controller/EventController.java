@@ -27,9 +27,8 @@ import com.proyect.Event.model.Event;
 import com.proyect.Event.response.EventResponse;
 
 @RestController
-/*
+
 @RequestMapping("/event")
-*/
 public class EventController {
 	
 	private static final Logger log = LoggerFactory.getLogger(EventController.class);
@@ -52,7 +51,7 @@ public class EventController {
 		return eventServices.save(event);
 	}
 	
-	@PostMapping
+	@PostMapping("/add")
 	public ResponseEntity<?> addEvent(@RequestBody Event event) {
 		Event result = this.save(event);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{code}").buildAndExpand(result.getCode())
