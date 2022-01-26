@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.proyect.Event.Services.EventServices;
-import com.proyect.Event.adapter.EventAdapter;
 import com.proyect.Event.model.Event;
 import com.proyect.Event.response.EventResponse;
 
@@ -39,37 +38,43 @@ public class EventController {
 	@Autowired
 	private EventServices eventServices;
 
-	@Autowired
-	private EventAdapter eventAdapter;
 
+	
 	@Operation(summary = "List of all available events", description = "returns a json with all events in the database", tags = {
 			"Event" })
 	@GetMapping("/events")
 	public List<EventResponse> findAll() {
-
+		log.info("------ readSEvents (GET) ");
 		return eventServices.findAll();
 	}
 
+	
 	@Operation(summary = "Save a event", description = "inserts an event to the database", tags = { "Event" })
 	@PutMapping
 	public Event save(Event event) {
 		return eventServices.save(event);
 	}
+	
 
 	@Operation(summary = "Add a new eventt", description = "Add a new eventt", tags = { "Event" })
 	@PostMapping("/add")
 	public ResponseEntity<?> addEvent(@RequestBody Event event) {
+		log.info("------ addSEvent (POST) ");
 		Event result = this.save(event);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{code}").buildAndExpand(result.getCode())
 				.toUri();
-
+		log.info("------ new event has been ADDED ");
 		return ResponseEntity.created(location).build();
 	}
 
+	
+	
 	@Operation(summary = "Delete a event", description = "Deletes an event by its code", tags = { "Event" })
 	@DeleteMapping("/deleteEvent/{code}")
 	public void deleteUser(@PathVariable String code) {
+		log.info("------ deleting event) " + code);
 		eventServices.deleteEvent(code);
+		log.info("------ DELETED ");
 
 	}
 
