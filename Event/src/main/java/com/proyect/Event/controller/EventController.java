@@ -61,7 +61,7 @@ public class EventController {
   }
 
 	@DeleteMapping("/deleteEvent/{code}")
-	public void deleteUser(@PathVariable String code) {
+	public void deleteUser(@PathVariable("code") String code) {
 		eventServices.deleteEvent(code);
 
 	}
