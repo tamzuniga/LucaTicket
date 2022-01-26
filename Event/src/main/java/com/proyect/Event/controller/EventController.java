@@ -71,11 +71,10 @@ public class EventController {
 	
 	@Operation(summary = "Delete a event", description = "Deletes an event by its code", tags = { "Event" })
 	@DeleteMapping("/deleteEvent/{code}")
-	public void deleteUser(@PathVariable String code) {
+	public void deleteUser(@PathVariable("code") String code) {
 		log.info("------ deleting event) " + code);
 		eventServices.deleteEvent(code);
 		log.info("------ DELETED ");
-
 	}
 
 	// Actualizar juego

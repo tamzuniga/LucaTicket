@@ -18,8 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Event {
 	
-	@Id
-	@Field(name="code")
+	
     private String code;
 	private String name;
 	private String price;

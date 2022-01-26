@@ -78,7 +78,7 @@ class EventControllerTest {
 	
 	
 	@Test
-	void shouldNotRemoveANonExistingEvent() {
+	void shouldRemoveAnExistingEvent() {
 		RestAssured.baseURI = "http://localhost:8080";
 
 		RestAssured.given().log().all()
@@ -89,5 +89,6 @@ class EventControllerTest {
 			.then().log()
 				.ifValidationFails().statusCode(200);
 	}
+	
 
 }
