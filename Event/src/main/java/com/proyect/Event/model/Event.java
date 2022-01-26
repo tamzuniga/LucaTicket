@@ -3,7 +3,9 @@ package com.proyect.Event.model;
 
 
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +18,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Event {
 	
-
+	@Id
+	@Field(name="code")
     private String code;
 	private String name;
 	private String price;
