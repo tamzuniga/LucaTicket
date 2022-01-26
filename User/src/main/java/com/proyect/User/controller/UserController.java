@@ -14,19 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-//import com.proyect.User.adapter.UserAdapter;
 import com.proyect.User.model.User;
-import com.proyect.User.response.UserResponse;
 import com.proyect.User.service.UserService;
-import com.proyect.User.service.UserServiceImpl;
+
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	//private static final Logger log = (Logger) LoggerFactory.getLogger(UserController.class);
 
-	//@Autowired
-	//private UserAdapter ua;
 
 	@Autowired
 	private UserService us;
@@ -36,7 +32,7 @@ public class UserController {
 		return us.newUser(user);
 	}
 
-	@PostMapping("/newUser")
+	@PostMapping("/add")
 	public ResponseEntity<?> newUser(@RequestBody User user) {
 		User u = this.save(user);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(u.getId()).toUri();
