@@ -20,17 +20,26 @@ import lombok.Setter;
 @Getter
 @Setter
 
-@Table
+@Table(name="user")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+
 	private String name;
-	private String lastName;
+	
+	
+	private String lastname;
+	
+
 	private String mail;
+	
+
 	private String password;
+	
+
 	private String date;
 	
 	

@@ -12,7 +12,7 @@ public class UserResponse implements Serializable {
 	
 	private int id;
 	private String name;
-	private String lastName;
+	private String lastname;
 	private String mail;
 	private String password;
 	private String date;
