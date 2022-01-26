@@ -10,10 +10,6 @@ import net.minidev.json.JSONObject;
 
 class UserControllerTest {
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	void shouldReturn201WhenPostNewUser() {
@@ -24,7 +20,7 @@ class UserControllerTest {
 		RestAssured.baseURI = "http://localhost:8080";
 		
 		RestAssured.given().header("Content-Type", "aplication/json").contentType(ContentType.JSON)
-		.accept(ContentType.JSON).body(request.toJSONString()).when().post("/user/newUser").then().statusCode(201)
+		.accept(ContentType.JSON).body(request.toJSONString()).when().post("/user/add/").then().statusCode(201)
 		.log().all();
 		
 	}
