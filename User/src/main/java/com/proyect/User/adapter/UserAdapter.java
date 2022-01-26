@@ -17,7 +17,7 @@ public class UserAdapter {
 		userResponse.setId(user.getId());
 		userResponse.setDate(user.getDate());
 		userResponse.setName(user.getName());
-		userResponse.setLastName(user.getLastName());
+		userResponse.setLastname(user.getLastname());
 		userResponse.setMail(user.getMail());
 		userResponse.setPassword(user.getPassword());
 		
