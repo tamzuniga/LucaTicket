@@ -16,11 +16,32 @@ class UserControllerTest {
 		JSONObject request = new JSONObject();
 		request.put("name", "sebastian");
 		request.put("lastname", "guapo");
+		request.put("mail", "sebastian");
+		request.put("password", "guapo");
+		request.put("date", "guapo");
 		
-		RestAssured.baseURI = "http://localhost:8080";
+		RestAssured.baseURI = "http://localhost:8888";
 		
 		RestAssured.given().header("Content-Type", "aplication/json").contentType(ContentType.JSON)
 		.accept(ContentType.JSON).body(request.toJSONString()).when().post("/user/add/").then().statusCode(201)
+		.log().all();
+		
+	}
+	
+
+	@Test
+	void shouldReturn500WhenPostNewUser() {
+		JSONObject request = new JSONObject();
+		request.put("name", "sebastian");
+		request.put("lastname", "guapo");
+		request.put("mail", "sebastian");
+		request.put("password", "guapo");
+		request.put("dare", "pepe");
+		
+		RestAssured.baseURI = "http://localhost:8888";
+		
+		RestAssured.given().header("Content-Type", "aplication/json").contentType(ContentType.JSON)
+		.accept(ContentType.JSON).body(request.toJSONString()).when().post("/user/add/").then().statusCode(500)
 		.log().all();
 		
 	}
