@@ -2,11 +2,12 @@ package com.proyect.User.controller;
 
 import java.net.URI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 //import org.apache.logging.log4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ import com.proyect.User.service.UserService;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	//private static final Logger log = (Logger) LoggerFactory.getLogger(UserController.class);
+	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
 
 	@Autowired
@@ -34,8 +35,10 @@ public class UserController {
 
 	@PostMapping("/add")
 	public ResponseEntity<?> newUser(@RequestBody User user) {
+		log.info("------ adding new User (POST) ");
 		User u = this.save(user);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(u.getId()).toUri();
+		log.info("------ new user ADDED) ");
 		return ResponseEntity.created(location).build();
 	}
 }

@@ -15,7 +15,7 @@ public class OpenApiConfig {
 	@Bean
 	public OpenAPI EventOpenAPI() {
 		return new OpenAPI()
-				.info(new Info().title("Event API").description("Documentation from API").version("v1.0")
+				.info(new Info().title("User API").description("Documentation from API").version("v1.0")
 				.contact(new Contact().name("LucaTicket").url("https://LucaTicket.es")
 				.email("LucaTicket@hotmail.com"))
 				.license(new License().name("LICENSE").url("http://springdoc.org")))
