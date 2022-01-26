@@ -67,6 +67,19 @@
 			<version>1.18.22</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.3.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>4.3.1</version>
+            <scope>test</scope>
+        </dependency>
 
 	</dependencies>
 	<dependencyManagement>
