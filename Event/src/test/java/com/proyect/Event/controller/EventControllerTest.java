@@ -83,12 +83,29 @@ class EventControllerTest {
 
 		RestAssured.given().log().all()
 				.accept(ContentType.JSON)
-				.pathParam("code", "1232142")
+				.pathParam("code", "324235f")
 			.when()
 				.delete("/event/deleteEvent/{code}")
 			.then().log()
 				.ifValidationFails().statusCode(200);
 	}
 	
+	@Test
+	void shoulAddNewEventEvenDoesntHaveAllFields() {
+
+		JSONObject request = new JSONObject();
+
+		request.put("albondiga", "324235f");
+		request.put("name", "Cupra");
+
+		System.out.println(request.toJSONString());
+
+		RestAssured.baseURI = "http://localhost:8080";
+
+		RestAssured.given().header("Content-Type", "aplication/json").contentType(ContentType.JSON)
+				.accept(ContentType.JSON).body(request.toJSONString()).when().post("/event/add/").then().statusCode(201)
+				.log().all();
+
+	}
 
 }
