@@ -1,6 +1,5 @@
 package com.proyect.User.model;
 
-import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,18 +20,18 @@ import lombok.Setter;
 @Getter
 @Setter
 
-@Table(name = "user")
+@Table
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	private String name;
 	private String lastName;
 	private String mail;
 	private String password;
-	private Date date;
+	private String date;
 	
 	
 }
